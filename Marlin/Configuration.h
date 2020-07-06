@@ -63,7 +63,7 @@
 //#define SAPPHIRE_PLUS
 
 // Cartesian
-//#define BLUER
+#define BLUER
 
 //===========================================================================
 //============================= Advanced presets ============================
@@ -1157,7 +1157,7 @@
       #define STEPS_Z     400
     #endif
     #ifndef STEPS_E0
-      #define STEPS_E0    90
+      #define STEPS_E0    410
     #endif
  #else
     //No Preset
@@ -1187,7 +1187,7 @@
     #define DEFAULT_MAX_FEEDRATE          { 300, 300, 10, 50 }
   #elif ENABLED(BLUER)
     //Bluer
-    #define DEFAULT_MAX_FEEDRATE          { 250, 250, 10, 50 }
+    #define DEFAULT_MAX_FEEDRATE          { 200, 200, 4, 70 }
   #else
     //No Preset
     #define DEFAULT_MAX_FEEDRATE          { 300, 300, 10, 50 }
@@ -1312,7 +1312,7 @@
  * The probe replaces the Z-MIN endstop and is used for Z homing.
  * (Automatically enables USE_PROBE_FOR_Z_HOMING.)
  */
-#define Z_MIN_PROBE_USES_Z_MIN_ENDSTOP_PIN
+//#define Z_MIN_PROBE_USES_Z_MIN_ENDSTOP_PIN
 
 // Force the use of the probe for Z-axis homing
 //#define USE_PROBE_FOR_Z_HOMING
