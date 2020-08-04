@@ -70,20 +70,20 @@
 //===========================================================================
 
 // Probe Settings
-//#define BL_TOUCH                 // Enable BLTouch Settings
+#define BL_TOUCH                 // Enable BLTouch Settings
 #if ENABLED(BL_TOUCH)
   //#define LOW_RES                  // 3x3 Grid 
-  //#define HI_RES                   // 5x5 Grid
+  #define HI_RES                   // 5x5 Grid
   //#define MAX_RES                  // 7x7 Grid
   //#define BL_TOUCH_HIGH_SPEED      // Only for BLTouch 3.0 and 3.1 Probe Pin does not pull in when moving in XY. Use at your own risk!
-  //#define Z_CLEARANCE_BL        5  // Z Clearance between probe points
+  #define Z_CLEARANCE_BL        5  // Z Clearance between probe points
   //#define MULTIPLE_PROBING_BL   2  // A total of 2 does fast/slow probes with a weighted average.  A total of 3 or more adds more slow probes, taking the average.
 #endif
   
 
 // Specify a Probe Offsetposition { X, Y, Z }
-#define OFFSET_X 0              // - Left   |   Right +
-#define OFFSET_Y 0              // - Front  |   Back +
+#define OFFSET_X 46              // - Left   |   Right +
+#define OFFSET_Y -9              // - Front  |   Back +
 #define OFFSET_Z 0              // - Nozzle ist Higher as the Probe 0 Point |  + Really? you did somthing wrong.
 
 
@@ -123,10 +123,10 @@
 //          TMC5130, TMC5130_STANDALONE, TMC5160, TMC5160_STANDALONE
 //#define CUSTOM_STEPPER_DRIVERS
 #if ENABLED(CUSTOM_STEPPER_DRIVERS)
-  #define DRIVER_X TMC2209_STANDALONE
-  #define DRIVER_Y TMC2209_STANDALONE
-  #define DRIVER_Z TMC2209_STANDALONE
-  #define DRIVER_E0 TMC2209_STANDALONE
+  #define DRIVER_X TMC2208_STANDALONE
+  #define DRIVER_Y TMC2208_STANDALONE
+  #define DRIVER_Z TMC2208_STANDALONE
+  #define DRIVER_E0 TMC2208_STANDALONE
   //#define DRIVER_E1 TMC2209_STANDALONE
   //#define DRIVER_Z2 TMC2209_STANDALONE
 
@@ -1312,10 +1312,10 @@
  * The probe replaces the Z-MIN endstop and is used for Z homing.
  * (Automatically enables USE_PROBE_FOR_Z_HOMING.)
  */
-//#define Z_MIN_PROBE_USES_Z_MIN_ENDSTOP_PIN
+#define Z_MIN_PROBE_USES_Z_MIN_ENDSTOP_PIN
 
 // Force the use of the probe for Z-axis homing
-//#define USE_PROBE_FOR_Z_HOMING
+#define USE_PROBE_FOR_Z_HOMING
 
 /**
  * Z_MIN_PROBE_PIN
