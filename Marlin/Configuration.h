@@ -138,6 +138,12 @@
   //#define INVERT_E1
 #endif
 
+// CoolStep. Currently supported for TMC2130, TMC2209, TMC5130 and TMC5160 only.
+// This mode allows for cooler steppers and energy savings.
+// the driver will switch to coolStep when stepper speed is over COOLSTEP_THRESHOLD mm/s.
+// Settings for CoolStep in CONFIGURATION_ADV.h on Line 2499 
+//#define COOLSTEP
+
 // Custom Axis Steps Per MM
 // If you have calibrated the extruder before, you can enter the steps here, also be specified individually for the other axes.
 //#define STEPS_X         0  // Normally no change needed...
@@ -176,6 +182,11 @@
     //#define CUSTOM_TEMP_SENSOR_1 5      // 5 : 100K thermistor - ATC Semitec 104GT-2/104NT-4-R025H42G (Used in ParCan, J-Head, and E3D) (4.7k pullup)
     //#define CUSTOM_TEMP_SENSOR_BED 1
 #endif
+
+// Reduce installed fans (default to number of defined fan pins).
+// :[1,2,3,4,5,6,7,8]
+//#define FANS 1
+
 
 //===========================================================================
 //============================= Display language selection===================
@@ -1905,7 +1916,7 @@
 #define FILAMENT_RUNOUT_SENSOR
 #if ENABLED(FILAMENT_RUNOUT_SENSOR)
   #define NUM_RUNOUT_SENSORS   1     // Number of sensors, up to one per extruder. Define a FIL_RUNOUT#_PIN for each.
-  #define FIL_RUNOUT_INVERTING false // Set to true to invert the logic of the sensor.
+  #define FIL_RUNOUT_STATE LOW       // Set to true to invert the logic of the sensor.
   #define FIL_RUNOUT_PULLUP          // Use internal pullup for filament runout pins.
   //#define FIL_RUNOUT_PULLDOWN      // Use internal pulldown for filament runout pins.
 
