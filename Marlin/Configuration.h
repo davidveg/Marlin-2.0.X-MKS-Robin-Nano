@@ -162,18 +162,18 @@
 
 // Custom PID & TEMP SENSOR Settings  
 // Normally no change necessary, unless it does not maintain the set temperature + -1 °
-//#define CUSTOM_HOTEND_PID // HOTEND
+#define CUSTOM_HOTEND_PID // HOTEND
   #if ENABLED(CUSTOM_HOTEND_PID)
-    #define CUSTOM_Kp 1
-    #define CUSTOM_Ki 1
-    #define CUSTOM_Kd 1
+    #define CUSTOM_Kp 9.44
+    #define CUSTOM_Ki 0.38
+    #define CUSTOM_Kd 57.88
   #endif
 
-//#define CUSTOM_BED_PID    // HEATED BED
+#define CUSTOM_BED_PID    // HEATED BED
   #if ENABLED(CUSTOM_BED_PID)
-    #define CUSTOM_BED_Kp 1
-    #define CUSTOM_BED_Ki 1
-    #define CUSTOM_BED_Kd 1
+    #define CUSTOM_BED_Kp 29.24
+    #define CUSTOM_BED_Ki 4.34
+    #define CUSTOM_BED_Kd 131.27
   #endif
 
 #define CUSTOM_TEMP_SENSOR
